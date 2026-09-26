@@ -1,0 +1,35 @@
+{
+  "name": "delta-death-tracker",
+  "version": "0.2.0",
+  "description": "三角洲行动撤离失败统计器",
+  "main": "main.js",
+  "author": "Jacky2277",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build:win": "electron-builder --win nsis",
+    "build:dir": "electron-builder --dir"
+  },
+  "devDependencies": {
+    "electron": "^44.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.jacky2277.delta-death-tracker",
+    "productName": "Delta Death Tracker",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "artifactName": "Delta-Death-Tracker-${version}-Setup.exe"
+    }
+  }
+}

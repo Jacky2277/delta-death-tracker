@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Delta Death Tracker</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">△</div>
+        <div><strong>DELTA</strong><span>DEATH TRACKER</span></div>
+      </div>
+      <button class="nav active" data-page="dashboard">总览</button>
+      <button class="nav" data-page="record">记录本局</button>
+      <button class="nav" data-page="operators">干员管理</button>
+      <button class="nav" data-page="reasons">死亡原因</button>
+      <button class="nav" data-page="records">历史记录</button>
+      <button class="nav" data-page="data">数据管理</button>
+      <div class="sidebar-bottom">v0.1.0 · Jacky2277</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">EXTRACTION STATISTICS</div>
+          <h1 id="pageTitle">战绩总览</h1>
+        </div>
+        <button class="primary" onclick="showPage('record')">＋ 记录本局</button>
+      </header>
+
+      <section id="dashboard" class="page active"></section>
+      <section id="record" class="page"></section>
+      <section id="operators" class="page"></section>
+      <section id="reasons" class="page"></section>
+      <section id="records" class="page"></section>
+      <section id="data" class="page"></section>
+    </main>
+  </div>
+  <div id="toast"></div>
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -102,7 +102,7 @@ function renderData(){
  <div class="panel"><h2>导出数据</h2><p class="muted">把干员、死亡原因和全部历史记录保存成 JSON 文件。</p><button class="primary" onclick="exportData()">导出 JSON</button></div>
  <div class="panel"><h2>导入数据</h2><p class="muted">导入以前备份的数据。导入会覆盖当前数据。</p><input id="fileInput" type="file" accept=".json" onchange="importData(event)"></div>
  </div>
- <div class="panel" style="margin-top:14px"><div class="section-head"><h2>地图管理</h2><button class="primary" onclick="addMap()">＋ 添加地图</button></div><div class="chips">${data.maps.map((m,i)=>`<span class="chip">${esc(m)} <button class="small" onclick="renameMap(${i})">改</button> <button class="small" onclick="removeMap(${i})">×</button></span>`).join("")}</div></div><div class="panel" style="margin-top:14px"><h2>项目</h2><p class="muted">Delta Death Tracker · v0.1.0 · GitHub: Jacky2277</p></div>`;
+ <div class="panel" style="margin-top:14px"><div class="section-head"><h2>地图管理</h2><button class="primary" onclick="addMap()">＋ 添加地图</button></div><div class="chips">${data.maps.map((m,i)=>`<span class="chip">${esc(m)} <button class="small" onclick="renameMap(${i})">改</button> <button class="small" onclick="removeMap(${i})">×</button></span>`).join("")}</div></div><div class="panel" style="margin-top:14px"><h2>项目</h2><p class="muted">Delta Death Tracker · v0.2.0 · GitHub: Jacky2277</p></div>`;
 }
 function addMap(){const n=prompt("输入地图名称");if(n?.trim()&&!data.maps.includes(n.trim())){data.maps.push(n.trim());save();}}
 function renameMap(i){const n=prompt("修改地图名称",data.maps[i]);if(n?.trim()){const old=data.maps[i];data.maps[i]=n.trim();data.records.forEach(r=>{if(r.map===old)r.map=n.trim()});save();}}
